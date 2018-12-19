@@ -1,0 +1,35 @@
+ext {
+
+//    environment = "dev"
+    environment = "release"
+
+    supportVersion = '27.1.0'
+
+    butterKnifeVersion = rootProject.properties["butterknifeVersion"]
+    if(null == butterKnifeVersion){
+        butterKnifeVersion = '8.8.1'
+    }
+
+    versions = [
+//            "buildToolsVersion": "${supportVersion}",
+            "compileSdkVersion": 27,
+            "minSdkVersion"    : 15,
+            "targetSdkVersion" : 26,
+            "versionCode"      : 6,
+            "versionName"      : "1.2.4"
+    ]
+    dependencies = [
+            // 依赖包 ：
+            "appcompat-v7" : "com.android.support:appcompat-v7:${supportVersion}",
+            "support-v4":"com.android.support:support-v4:${supportVersion}",
+            "design" : "com.android.support:design:${supportVersion}",
+            "recyclerview-v7":"com.android.support:recyclerview-v7:${supportVersion}",
+            "constraint-layout":"com.android.support.constraint:constraint-layout:1.1.2",
+
+    ]
+
+    tinkerEnable = rootProject.properties["tinkerEnabled"]
+    if(null == tinkerEnable){
+        tinkerEnable = "false"
+    }
+}
